@@ -1,18 +1,20 @@
+<section class="max-w-7xl mx-auto px-6 mt-12 text-center">
+  <h2 class="text-5xl font-bold text-gray-800 animate-fade-in-up">Formas de Donar</h2>
+  <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto animate-fade-in-up">
+    Descubre las distintas maneras de ayudar y aportar un cambio positivo en la vida de muchas personas.
+  </p>
 
-  
-  <!-- SECCIÓN PRINCIPAL -->
-  <section class="max-w-6xl mx-auto px-4 mt-10 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">Dona y cambia vidas</h2>
-    <p class="text-lg text-gray-600 mt-4">Desde cabello, sangre, juguetes, libros hasta dinero, cada donación cuenta.</p>
-  
-    <div class="mt-8 flex justify-center space-x-4">
-      <a routerLink="/donaciones" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">
-        Descubre cómo donar
-      </a>
-      <a routerLink="/autenticacion/registro" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700">
-        Únete ahora
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+    
+    <div *ngFor="let donacion of donaciones" class="bg-white p-6 rounded-xl shadow-lg transform transition hover:scale-105 flex flex-col items-center">
+      <img [src]="donacion.imagen" [alt]="donacion.titulo" class="h-40 w-full object-cover rounded-lg">
+      <h3 class="text-2xl font-semibold mt-4" [ngClass]="donacion.color">{{ donacion.titulo }}</h3>
+      <p class="text-gray-600 mt-2 text-center">{{ donacion.descripcion }}</p>
+      <a routerLink="{{ donacion.link }}" class="mt-4 inline-block text-white px-5 py-2 rounded-lg shadow-lg transition" 
+         [ngClass]="donacion.botonColor">
+        Más información
       </a>
     </div>
-  </section>
-  
- 
+
+  </div>
+</section>
