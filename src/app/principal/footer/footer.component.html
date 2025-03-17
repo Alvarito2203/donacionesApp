@@ -1,7 +1,36 @@
-<footer class="bg-gray-900 text-white mt-12 py-8 text-center">
-  <p>&copy; 2024 Where2Donate - Todos los derechos reservados.</p>
-  <div class="flex justify-center space-x-4 mt-3">
-    <a href="#" class="hover:text-pink-400 transition">Términos y Condiciones</a>
-    <a href="#" class="hover:text-pink-400 transition">Política de Privacidad</a>
+<footer class="bg-gray-900 text-white py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    
+    <!-- Logo y Nombre -->
+    <div>
+      <h2 class="text-3xl font-bold text-pink-400">Where2Donate</h2>
+      <p class="text-gray-400 mt-2">Conectando donaciones con quienes más las necesitan.</p>
+    </div>
+
+    <!-- Enlaces Rápidos -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-300">Enlaces</h3>
+      <ul class="mt-2 space-y-2">
+        <li><a routerLink="/inicio" class="footer-link">Inicio</a></li>
+        <li><a routerLink="/donaciones" class="footer-link">Donaciones</a></li>
+        <li><a routerLink="/blog" class="footer-link">Blog</a></li>
+        <li><a routerLink="/contacto" class="footer-link">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Redes Sociales -->
+    <div>
+      <h3 class="text-lg font-semibold text-gray-300">Síguenos</h3>
+      <div class="mt-4 flex justify-center md:justify-start space-x-4">
+        <a href="#" class="social-icon bg-blue-500"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon bg-sky-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon bg-pink-500"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
   </div>
+
+  <p class="text-center text-gray-500 text-sm mt-8">
+    © 2024 Where2Donate. Todos los derechos reservados.
+  </p>
 </footer>
