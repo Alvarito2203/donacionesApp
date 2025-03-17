@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'inicio', loadChildren: () => import('./principal/principal.module').then(m => m.PrincipalModule) },
+  { path: 'autenticacion', loadChildren: () => import('./autenticacion/autenticacion.module').then(m => m.AutenticacionModule) },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '**', redirectTo: '/inicio' } // Página por defecto en caso de URL no encontrada
 ];
 
 @NgModule({
