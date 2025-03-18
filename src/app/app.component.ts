@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -17,4 +17,6 @@ import { FooterComponent } from './principal/footer/footer.component';
   `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent { 
+  
+}

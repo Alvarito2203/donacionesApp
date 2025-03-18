@@ -1,34 +1,31 @@
-<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-300 to-pink-500 shadow-lg py-5 px-10 z-50">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
-    
-    <!-- Logo y Nombre -->
-    <div class="flex items-center space-x-4">
-      <img src="assets/logo.png" alt="Where2Donate Logo" class="h-12 w-auto">
-      <a routerLink="/" class="text-4xl font-extrabold text-white tracking-wide hover:text-gray-200 transition">
-        Where2Donate
-      </a>
+<header [ngClass]="{'hidden-header': !isHeaderVisible}">
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="../../../assets/logo/logo.png" alt="Where2Donate Logo">
+      <a routerLink="/">Where2Donate</a>
     </div>
-
-    <!-- Menú de Navegación -->
-    <nav class="hidden md:flex space-x-10 text-lg font-semibold text-white">
+    
+    <nav class="nav-menu">
       <a routerLink="/inicio" class="menu-item">Inicio</a>
-      <a routerLink="/donaciones" class="menu-item">Donaciones</a>
+      <div class="submenu-container">
+        <button class="menu-item">Donaciones ▼</button>
+        <div class="submenu-content">
+          <a routerLink="/donaciones/pelo" class="submenu-item text-pink-500">Donación de Pelo</a>
+          <a routerLink="/donaciones/sangre" class="submenu-item text-red-500">Donación de Sangre</a>
+          <a routerLink="/donaciones/juguetes" class="submenu-item text-yellow-500">Donación de Juguetes</a>
+          <a routerLink="/donaciones/libros" class="submenu-item text-blue-500">Donación de Libros</a>
+          <a routerLink="/donaciones/dinero" class="submenu-item text-green-500">Donación de Dinero</a>
+          <a routerLink="/donaciones/tiempo" class="submenu-item text-purple-500">Dona tu Tiempo</a>
+        </div>
+      </div>
       <a routerLink="/blog" class="menu-item">Blog</a>
       <a routerLink="/sugerencias" class="menu-item">Sugerencias</a>
+      <a routerLink="/suscripciones" class="menu-item">Suscripciones</a>
     </nav>
 
-    <!-- Botones de Sesión -->
-    <div class="flex space-x-5">
-      <a routerLink="/autenticacion/inicio-sesion"
-         class="btn-primary">
-        Iniciar Sesión
-      </a>
-
-      <a routerLink="/autenticacion/registro"
-         class="btn-secondary">
-        Registrarse
-      </a>
+    <div class="btn-container">
+      <a routerLink="/autenticacion/inicio-sesion" class="btn-primary">Iniciar Sesión</a>
+      <a routerLink="/autenticacion/registro" class="btn-highlight">Registrarse</a>
     </div>
-
   </div>
 </header>

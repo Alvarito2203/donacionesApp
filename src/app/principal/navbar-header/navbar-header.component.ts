@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -14,5 +14,22 @@ export class NavbarHeaderComponent {
 
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;
+  }
+  previousScrollPosition = 0;
+  isHeaderVisible = true;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollPosition > this.previousScrollPosition) {
+      // Desaparece el header al hacer scroll hacia abajo
+      this.isHeaderVisible = false;
+    } else {
+      // Aparece el header al hacer scroll hacia arriba
+      this.isHeaderVisible = true;
+    }
+
+    this.previousScrollPosition = currentScrollPosition;
   }
 }
