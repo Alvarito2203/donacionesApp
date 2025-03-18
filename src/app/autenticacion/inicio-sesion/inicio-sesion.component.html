@@ -1,1 +1,27 @@
-<p>inicio-sesion works!</p>
+<!-- inicio-sesion.component.html - Vista del formulario de inicio de sesión -->
+<div class="contenedor-inicio-sesion">
+    <h2>Iniciar Sesión</h2>
+    
+    <form [formGroup]="formularioSesion" (ngSubmit)="iniciarSesion()">
+      <label for="correo">Correo Electrónico:</label>
+      <input id="correo" type="email" formControlName="correo" placeholder="Ingresa tu correo" required>
+      <div *ngIf="formularioSesion.get('correo')?.invalid && formularioSesion.get('correo')?.touched">
+        <small>El correo es obligatorio y debe tener un formato válido.</small>
+      </div>
+  
+      <label for="contrasena">Contraseña:</label>
+      <input id="contrasena" type="password" formControlName="contrasena" placeholder="Ingresa tu contraseña" required>
+      <div *ngIf="formularioSesion.get('contrasena')?.invalid && formularioSesion.get('contrasena')?.touched">
+        <small>La contraseña debe tener al menos 6 caracteres.</small>
+      </div>
+  
+      <button type="submit" [disabled]="formularioSesion.invalid">Iniciar Sesión</button>
+    </form>
+  
+    <button (click)="iniciarSesionConGoogle()">Iniciar sesión con Google</button>
+  
+    <p *ngIf="mensajeError" class="error">{{ mensajeError }}</p>
+    
+    <p>¿Olvidaste tu contraseña? <a routerLink="/recuperar-contrasena">Recupérala aquí</a></p>
+    <p>¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></p>
+  </div>
